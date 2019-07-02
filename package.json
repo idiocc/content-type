@@ -2,7 +2,7 @@
   "name": "@goa/content-type",
   "version": "1.0.0",
   "description": "[fork] Create and parse HTTP Content-Type header according to RFC 7231 Written In ES6 And Optimised With JavaScript Compiler.",
-  "main": "build/index.js",
+  "main": "depack/index.js",
   "module": "src/index.js",
   "scripts": {
     "t": "zoroaster -a",
@@ -21,7 +21,7 @@
     "e": "alanode"
   },
   "files": [
-    "build",
+    "depack",
     "src",
     "types/externs.js"
   ],
