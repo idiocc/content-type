@@ -16,7 +16,7 @@ const invalidTypes = [
   'text/plain,wrong',
 ]
 
-export const Parse = {
+export default {
   'parses basic type'() {
     const { type } = parse('text/html')
     equal(type, 'text/html')
@@ -70,7 +70,7 @@ export const Parse = {
       charset: 'UTF-\\"8"',
     })
   },
-  '!handles balanced quotes'() {
+  'handles balanced quotes'() {
     const { type, parameters } = parse('text/html; param="charset=\\"utf-8\\"; foo=bar"; bar=foo')
     equal(type, 'text/html')
     deepEqual(parameters, {

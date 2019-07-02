@@ -1,10 +1,13 @@
-<types namespace="_@goa/content-type">
-  <type name="Config" desc="Options for the program.">
-    <prop boolean name="shouldRun" default="true">
-      A boolean option.
+<types namespace="_goa">
+  <import name="IncomingMessage" from="http" />
+  <import name="ServerResponse" from="http" />
+
+  <type name="ContentType" desc="The content-type interface.">
+    <prop string name="type">
+      The type of the content-type.
     </prop>
-    <prop string name="text">
-      A text to return.
+    <prop type="!Object<string, string>" name="parameters">
+      An object of the parameters in the media type (name of the parameter will be lower-cased).
     </prop>
   </type>
 </types>

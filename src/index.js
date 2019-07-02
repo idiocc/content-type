@@ -186,6 +186,7 @@ function qstring(val) {
 
 /**
  * Class to represent a content type.
+ * @implements {_goa.ContentType}
  */
 class ContentType {
   constructor(type) {

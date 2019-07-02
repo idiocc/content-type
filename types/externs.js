@@ -1,5 +1,8 @@
 /* typal types/index.xml externs */
+/** @const */
+var _goa = {}
 /**
- * @typedef {{ shouldRun: (boolean|undefined), text: string }}
+ * The content-type interface.
+ * @typedef {{ type: string, parameters: !Object<string, string> }}
  */
-var Config
+_goa.ContentType

@@ -8,7 +8,7 @@ const http = require('http');'use strict';
 const g = /; *([!#$%&'*+.^_`|~0-9A-Za-z-]+) *= *("(?:[\u000b\u0020\u0021\u0023-\u005b\u005d-\u007e\u0080-\u00ff]|\\[\u000b\u0020-\u00ff])*"|[!#$%&'*+.^_`|~0-9A-Za-z-]+) */g, h = /^[\u000b\u0020-\u007e\u0080-\u00ff]+$/, k = /^[!#$%&'*+.^_`|~0-9A-Za-z-]+$/, l = /\\([\u000b\u0020-\u00ff])/g, m = /([\\"])/g, n = /^[!#$%&'*+.^_`|~0-9A-Za-z-]+\/[!#$%&'*+.^_`|~0-9A-Za-z-]+$/;
 class p {
   constructor(a) {
-    this.a = {};
+    this.parameters = {};
     this.type = a;
   }
 }
@@ -16,7 +16,7 @@ class p {
   if (!a || "object" !== typeof a) {
     throw new TypeError("argument obj is required");
   }
-  const {a:b, type:e} = a;
+  const {parameters:b, type:e} = a;
   if (!e || !n.test(e)) {
     throw new TypeError("invalid type");
   }
@@ -75,7 +75,7 @@ class p {
       d = c[1].toLowerCase();
       c = c[2];
       '"' == c[0] && (c = c.substr(1, c.length - 2).replace(l, "$1"));
-      e.a[d] = c;
+      e.parameters[d] = c;
     }
     if (b != a.length) {
       throw new TypeError("invalid parameter format");
