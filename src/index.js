@@ -77,7 +77,6 @@ export function format(obj) {
 
 /**
  * Parse media type to object.
- *
  * @param {string|!http.IncomingMessage|!http.ServerResponse} string
  */
 export function parse(string) {
@@ -195,10 +194,9 @@ class ContentType {
   }
 }
 
-/*!
- * content-type
- * Copyright(c) 2015 Douglas Christopher Wilson
- * MIT Licensed
+/**
+ * @license MIT content-type
+ * 2015 Douglas Christopher Wilson
  */
 
 /**

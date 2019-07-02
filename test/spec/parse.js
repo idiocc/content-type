@@ -70,7 +70,7 @@ export const Parse = {
       charset: 'UTF-\\"8"',
     })
   },
-  'handles balanced quotes'() {
+  '!handles balanced quotes'() {
     const { type, parameters } = parse('text/html; param="charset=\\"utf-8\\"; foo=bar"; bar=foo')
     equal(type, 'text/html')
     deepEqual(parameters, {
@@ -111,9 +111,9 @@ export const Req = {
   },
 }
 
-export const rs = {
+export const Res = {
   'parses content-type header'() {
-    var res = { getHeader: function () { return 'text/html' } }
+    const res = { getHeader () { return 'text/html' } }
     const { type  } = parse(res)
     equal(type, 'text/html')
   },
@@ -121,7 +121,7 @@ export const rs = {
     throws(parse.bind(null, {}), /content-type header is missing/)
   },
   'rejects missing content-type'() {
-    var res = { getHeader: function () {} }
+    const res = { getHeader: function () {} }
     throws(parse.bind(null, res), /content-type header is missing/)
   },
 }
